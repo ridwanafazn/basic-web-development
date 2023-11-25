@@ -1,46 +1,103 @@
 @import url('https://fonts.cdnfonts.com/css/chakra-petch');
 @import url('https://fonts.cdnfonts.com/css/ibm-plex-mono-3');
 
+* {
+    box-sizing: border-box;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    font-family: 'Chakra Petch SemiBold', sans-serif;
+}
+
+.topnav #myLinks {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+}
+
+.topnav #myLinks a {
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000000;
+    display: block;
+    text-align: center;
+}
+
+.topnav .logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    height: 100%;
+}
+
+.topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 24px;
+    line-height: 72px;
+    padding: 0 20px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #1D4F91;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-width: 100px;
+    height: auto;
+}
+
+.logo-text {
+    margin-left: 10px;
+}
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
 }
 
-header{
+h1, h2, h3{
     font-family: 'Chakra Petch SemiBold', sans-serif;
-    background-color: #1D4F91;
-    color: #ffffff;
 }
-footer {
-    font-family: 'Chakra Petch SemiBold', sans-serif;
-    background-color: #1D4F91;
-    color: #fff;
-    padding: 1em;
-    text-align: center;
+p{
+    font-family: 'IBM Plex Mono', sans-serif;
+    letter-spacing: -1px;
 }
 
 main {
-    margin-top: 120px;
     display: flex;
     flex: 1;
     padding: 20px;
-}
-
-article h2 {
-    font-family: 'Chakra Petch SemiBold', sans-serif;
-    font-size: 25px;
-}
-
-article h5{
-    font-family: 'IBM Plex Mono Medium', sans-serif;
-    font-size: 20px;
-}
-article p {
-    font-family: 'IBM Plex Mono', sans-serif;
-    letter-spacing: -1px;
 }
 
 article {
@@ -52,50 +109,49 @@ article {
 
 aside {
     flex: 1;
-}
-
-aside img {
-    width: 50%;
-    height: auto;
+    max-width: 350px;
+    margin: 0 auto;
 }
 
 .slideshow-container {
     max-width: 100%;
     position: relative;
     margin-top: 20px;
-} 
+    width: 100%;
+    max-height: 0;
+    padding-bottom: 133.33%;
+}
 
-/* Container untuk setiap kartu */
 .mySlides {
     display: none;
-    text-align: center;  
+    text-align: center;
 }
 
- 
 .mySlides img {
-    max-width: 45%;  
-    height: auto;  
-    border-radius: 8px;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    max-height: 100%;
+    min-height: 100%;
 }
 
- 
 .mySlides p {
-    margin-top: 10px; 
+    margin-bottom: 10px;
 }
- 
+
 .prev,
 .next {
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: #FF4655;
     font-weight: bold;
-    font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
+    cursor: pointer;
 }
 
 .next {
@@ -108,175 +164,10 @@ img {
     height: auto;
 }
 
-
-* {
-    box-sizing: border-box;
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 72px;
-    padding: 0 20px;
-    color: #222222;
-    background: #ffffff;
-    border-bottom: 1px solid #f2f2f2;
-    font-family: "Euclid Circular A", "Poppins";
-}
-
-.logo,
-.links {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    gap: 12px;
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 6px;
-}
-
-.logo h2 {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.links {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    padding-left: 20px;
-}
-
-.navbar a {
-    color: inherit;
-    text-decoration: none;
-    transition: 0.25s;
-}
-
-a.join-link {
-    display: grid;
-    place-items: center;
-    height: 40px;
-    padding: 0 12px;
-    border-radius: 6px;
-    color: #f9f9f9;
-    background: #01a081;
-}
-
-.search {
-    flex: 1 1 auto;
-    position: relative;
-    margin-left: 10px;
-}
-
-.search input {
-    background: #f2f2f2;
-    border-radius: 6px;
-    border: 0;
-    width: 100%;
-    height: 40px;
-    padding-left: 34px;
-    font-family: inherit;
-    font-size: 16px;
-}
-
-.search input::placeholder {
-    color: #9d9d9d;
-}
-
-.search img {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    translate: 0 -50%;
-    width: 20px;
-    height: 20px;
-}
-
-.burger {
-    display: grid;
-    place-items: center;
-    background: transparent;
-    border: 0;
-}
-
-@media (width >=320px) {
-    .burger {
-        display: none;
-    }
-}
-
-.dropdown {
-    position: relative;
-    cursor: pointer;
-}
-
-.dropdown>a {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    height: 72px;
-}
-
-.dropdown>a>img {
-    width: 20px;
-}
-
-.dropdown:hover .menu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu {
-    position: absolute;
-    top: 60px;
-    right: -20px;
-    display: grid;
-    width: 180px;
-    padding: 8px 0;
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #e1e1e1;
-    box-shadow: 0 40px 40px rgb(0 0 0 / 6%);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.25s;
-}
-
-.menu::before {
-    content: "";
-    background: inherit;
-    border-top: 1px solid #e1e1e1;
-    border-right: 1px solid #e1e1e1;
-    position: absolute;
-    top: -7px;
-    right: 22px;
-    width: 12px;
-    height: 12px;
-    rotate: -45deg;
-}
-
-.menu.open {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu>a {
-    font-size: 14px;
-    padding: 12px 20px;
-}
-
-.menu>a:hover {
-    background: #f5f5f5;
+footer {
+    font-family: 'Chakra Petch SemiBold', sans-serif;
+    background-color: #1D4F91;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
 }
