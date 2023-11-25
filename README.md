@@ -1,4 +1,4 @@
-# basic-web-development
+Dicoding Asesmen
 Without Library &amp; Framework Pages
 
 1. Terdapat elemen Header, Footer, Main, Article, dan Aside
